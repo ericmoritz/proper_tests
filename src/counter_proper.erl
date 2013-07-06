@@ -22,7 +22,9 @@ next_state(Count, _V, {call, _, value, []}) ->
 
 precondition(_S, _Call) -> true.
 
-postcondition(_, {call, _, inc, [N]}, ok) ->
+% Note: The state is the state before next_state is called.
+% The actual count is Count + N. 
+postcondition(Count, {call, _, inc, [N]}, ok) ->
     true; % ignore the state, the value call will verify it 
 postcondition(Count, {call, _, value, []}, Count2) ->
     Count == Count2.
