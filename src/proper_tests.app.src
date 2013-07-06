@@ -1,0 +1,12 @@
+{application, proper_tests,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { proper_tests_app, []}},
+  {env, []}
+ ]}.
